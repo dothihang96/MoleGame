@@ -1,0 +1,86 @@
+body{
+    background: url(/images/grass-background.jpg)
+}
+
+.mole-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#play-ground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    height: 1px;
+    margin: auto;
+}
+
+#play-ground .mole {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    background-image: url(/images/grass-upper.png);
+    background-repeat: no-repeat;
+    background-size: 150px 75px;
+    background-position: top 0;
+}
+
+#play-ground .mole::before {
+    position: absolute;
+    content: "";
+    top: 50px;
+    left: 25px;
+    width: 100px;
+    height: 100px;
+    background-image: url(/images/mole-laugh1.png);
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    background-position: top 0;
+    opacity: 0.5;
+    transition: all 1s;
+}
+
+#play-ground .mole.active::before {
+    background-image: url(/images/mole.png);
+    top: 0;
+    opacity: 1;
+    transition: all .3s;
+}
+
+#play-ground .mole.hit::before {
+    background-image: url(/images/mole-thump4.png);
+    top: 40px;
+    opacity: 1;
+    transition: all .2s;
+}
+
+#play-ground .mole::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 75px;
+    background-image: url(/images/grass-lower.png);
+    background-repeat: no-repeat;
+    background-size: 150px 75px;
+    background-position: top 0;
+}
+#play-ground table {
+    margin-top: -200px;
+    margin-left: -200px;
+} 
+#score {
+    position: fixed;
+    min-width: 250px;
+    background: rgba(34, 32, 32, 0.5);
+    padding: 20px;
+    right: 0;
+    top: 40px;
+}
